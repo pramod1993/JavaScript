@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <h2 id="demo">Hello Pramod G</h2>
+    <button type="submit" onclick="document.getElementById('demo').innerHTML ='Hello Suman G Kya Hal h'">Click Me</button>
+
+    <!-- demo -2 -->
+    
+    <h2>Text in java Script</h2>
+    <h4 id="text">Show Me testing Demo</h4>
+    <button type="submit" onclick="myFunction()" >Click Me</button>
+
+    <!-- demo-3 -->
+
+    <p id="test"></p>
+
+    <!-- demo-4 -->
+
+    <h2>JavaScript Statements</h2>
+
+<p>JavaScript code blocks are written between { and }</p>
+
+<button type="button" onclick="myText()">Click Me!</button>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+  <!-- demo-5 -->
+
+  <!-- opration -->
+  <div id="opration"></div>
+  
+  <!-- opration1 -->
+  <div id="opration1"></div>
+    
+    <script>
+        // const de = document.getElementById('demo').innerHTML;
+
+        // demo-2
+        function myFunction(){
+            document.getElementById('text').innerHTML = 'Text in java Script';
+        }
+
+        // demo-3
+
+        document.getElementById('test').innerHTML = 'Hello Pramod & Suman'
+
+        // demo-4
+            function myText() {
+            document.getElementById("demo1",).innerHTML = "Hello Pramod!";
+            document.getElementById("demo2").innerHTML = "How are Suman?";
+            }
+        // demo-5
+        // let x = -100;
+        // let y = 5;
+        // let z = x + y;
+        //     document.getElementById('opration').innerHTML = z;
+
+        // demo-5.1
+        let x = -100;
+            x <<= 5;
+            document.getElementById('opration1').innerHTML = 'value is :' + x;
+    </script>
+</body>
+</html>

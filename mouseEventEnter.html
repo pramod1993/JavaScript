@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>suman</title>
+    </head>
+    <style>
+        body{
+            text-align: center;
+        }
+        #box{
+            background:#3f51b5;
+            color: #fff;
+            padding: 10px 15px;
+            margin: 5px auto;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 200px;
+            height: 200px;
+        }
+
+    </style>
+    <body>
+        <div class="content">
+            <div id="box"></div>
+        </div>
+
+
+        <!-- keypreess -->
+
+
+        <script>
+            
+            const mEnter = document.getElementById('box');
+            mEnter.addEventListener('mouseenter', () => {
+            mEnter.style.backgroundColor = 'red';
+            console.log('mouse Enter Bro');
+            });
+            mEnter.addEventListener('mouseleave', () => {
+            mEnter.style.backgroundColor = 'pink';
+            console.log('mouse Enter Bro');
+            });
+
+        </script>
+
+
+
+    </body>
+</html>

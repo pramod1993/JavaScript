@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pramod singh</title>
+    </head>
+    <style>
+        .parentDiv{
+            width: 300px;
+            height: 300px;
+            background: #ccc;
+            margin: 0 auto;
+            position: relative;
+        }
+        .childiv{
+            width: 150px;
+            height: 150px;
+            background: #000;
+            margin: 0 auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 25%;
+            bottom: 0;
+        }
+    </style>
+    <body>
+        <div class="parentDiv" id="parentId">
+            <div class="childiv" id="childId"></div>
+        </div>
+
+        <script>
+            const parentId = document.getElementById('parentId');
+            const childId = document.getElementById('childId');
+
+            const parentCall = () => {
+                alert('Parent Div Call');
+                console.log('parent Div Call');
+            }
+
+            const childCall = () => {
+                alert('child Div Call');
+                console.log('child Div Call');
+            }
+
+            parentId.addEventListener('click', parentCall);
+            childId.addEventListener('click', childCall);
+        </script>
+    </body>
+</html>

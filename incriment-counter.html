@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incriment count</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    .counter-container{
+        background: #ccc;
+        display: flex;
+    }
+    .main-box{
+        background: bisque;
+        width: 300px;
+        padding: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .counter{
+        font-size: 45px;
+        color: green;
+        font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    </style>
+<body>
+    <div class="counter-container">
+        <div class="main-box">
+            <i class="fa fa-coffee fa-3x"></i>
+            <div class="counter" data-target="4000"></div>
+            <span>Project Completed</span>
+        </div>
+
+        <div class="main-box">
+            <i class="fa fa-users fa-3x"></i>
+            <div class="counter" data-target="15000"></div>
+            <span>Our Happy Clients</span>
+        </div>
+
+        <div class="main-box">
+            <i class="fa fa-tasks  fa-3x"></i>
+            <div class="counter" data-target="5000"></div>
+            <span>OnGoing Projects</span>
+        </div>
+    </div>
+</body>
+<script>
+const counters = document.querySelectorAll('.counter');
+counters.forEach((counter)  => {
+    counter.innerHTML = 0;
+
+    const updateCounter = () => {
+       const targetCount = +counter.getAttribute('data-target');
+
+       const startingCount = Number(counter.innerHTML);
+       const incr = targetCount / 100 ;
+       if(startingCount < targetCount){
+        counter.innerHTML = `${Math.round(startingCount + incr)}`;
+        setTimeout(updateCounter, 10 )
+       } else{
+         counter.innerHTML = targetCount;
+       }
+
+    }
+     
+    updateCounter();
+})
+  
+
+</script>
+</html>

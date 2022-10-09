@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>pramod</title>
+    </head>
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{
+            background: rgb(235, 71, 71);
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            color: #fff;
+        }
+    </style>
+    <body>
+        <div class="min">
+            <p>Waet to know my Name</p>
+            <p id="showName"></p>
+            <br>
+            <button id="btn">Click hare</button>
+        </div>
+
+        <script>
+            const myName = document.querySelector('#showName');
+            const btn = document.querySelector('#btn');
+
+            const showName = () => {
+                myName.innerHTML = 'Loding.........!';
+                setTimeout(() => {
+                    myName.innerHTML = 'Pramod Singh';
+                }, 1000)
+            }
+            btn.addEventListener('click', showName);
+        </script>
+    </body>
+</html>

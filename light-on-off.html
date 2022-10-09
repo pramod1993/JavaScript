@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>pramod singh</title>
+    </head>
+    <style>
+        .main-heading{
+            background: #ccc;
+            width: 500px;
+            height: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        button{
+            background: #f39c12;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+        }
+    </style>
+    <body>
+        <div class="main-heading">
+            <h2>Can you turn the light on ?</h2>
+            <button onclick="document.getElementById('myImage').src='img/bulb-on.png' "> Turn On light</button>
+            <img src="img/bulb-off.png" alt="lightOff" id="myImage" style="width:30% ;" >
+            <button onclick="document.getElementById('myImage').src='img/bulb-off.png' "> Turn Off light</button>
+
+        </div>
+    </body>
+</html>

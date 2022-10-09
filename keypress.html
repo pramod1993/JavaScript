@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>suman</title>
+    </head>
+    <style>
+        body{
+            text-align: center;
+        }
+        #box{
+            background:#3f51b5;
+            color: #fff;
+            padding: 10px 15px;
+            margin: 5px;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 500px;
+            height: 500px;
+        }
+
+    </style>
+    <body>
+        <!-- keypreess -->
+
+<div class="content1">
+    <p>A function is triggered when the</p>
+    <input type="text" class="effect-1" onkeypress="keyPress()" onkeydown="keyDown()" onkeyup="keyUp()">
+    <br/>
+    <p id="keys"></p>
+</div>
+<script>
+    const keyPress = () => {
+    document.getElementById('keys').innerHTML = `You Press ${event.key} and it's code is ${event.code}`;
+    };
+    // const keyDown = () => {
+    //     document.getElementById('keys').innerHTML = 'key is down';
+    // };
+    // const keyUp = () => {
+    //     document.getElementById('keys').innerHTML = 'key is Up';
+    // };
+</script>
+        
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoogleKeep</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0;
+    }
+    .topbar{
+        background: #ff9800;
+        color: #fff;
+        padding: 10px;
+    }
+    .sidemenu{
+        text-align: right;
+        padding: 6px 0px 0;
+        position: relative;
+        right: 0;
+    }
+    .next {
+        border: none;
+        background: #ff9800;
+        color: #fff;
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+    .note{
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+        background: #ff9800;
+        display: inline-block;
+        margin: 10px;
+        overflow: overlay;
+        color: #fff;
+    }
+    .opretion{
+        text-align: right;
+        position: relative;
+        right: 8px;
+        top: -2px;
+    }
+    textarea{
+        width: 100%;
+        height: 80%;
+    }
+    .hidden{
+        display: none;
+    }
+    .min{
+       width: 200px;
+    }
+    .edit {
+        background: blue;
+        color: #Fff;
+        border: none;
+        padding: 4px 4px;
+        font-size: 16px;
+    }
+    .delete {
+        background: rgb(1, 87, 11);
+        color: #Fff;
+        border: none;
+        padding: 4px 7px 4px 7px;
+        font-size: 16px;
+    }
+</style>
+<body>
+   <div class="topbar">
+    <span><i class="fa fa-sticky-note"></i> Pramod & Suman</span>
+   </div> 
+   <div class="sidemenu">
+    <button class="next " id="add">
+        <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+        </span>
+        <span class="button-text">Add Note</span>
+    </button>
+   </div>
+   <!-- <div class="note">
+    
+   </div> -->
+</body>
+<script>
+    const addButton = document.querySelector('#add');
+
+        const updateLSData = () => {
+            const textArea = document.querySelectorAll('textarea');
+            const notes = [];
+            console.log(textArea);
+            textArea.forEach((note) => {
+                return notes.push(note.value);
+            })
+            console.log(notes);
+            localStorage.setItem('notes', JSON.stringify(notes));
+        }
+
+
+
+
+
+
+    const addNewNote = (text = '') => {
+        const note = document.createElement ('div');
+        note.classList.add('note');
+
+        const htmlData = `
+        <div class="opretion">
+        <button class="edit"><i class="fa fa-pencil-square-o"></i> </button>
+        <button class="delete"><i class="fa fa-trash-o"></i></button>
+        </div>
+        <div class="min ${text ? '': 'hidden'}"></div>
+        <textarea class="min-type ${text ? 'hidden': ''} "></textarea>`;
+
+        note.insertAdjacentHTML('afterbegin', htmlData);
+        
+        const editButton = note.querySelector('.edit');
+        const delButton = note.querySelector('.delete');
+        const minDiv = note.querySelector('.min');
+        const textArea = note.querySelector('textarea');
+
+        // deleting the node
+        delButton.addEventListener('click' , () => {
+            note.remove();
+            updateLSData();
+        })
+
+        // toggle using edit editButton
+
+            textArea.value = text;
+            minDiv.innerHTML = text;
+
+        editButton.addEventListener('click' , () => {
+            minDiv.classList.toggle('hidden');
+            textArea.classList.toggle('hidden');
+        })
+
+        textArea.addEventListener('change', (event) =>{
+            const value = event.target.value;
+            minDiv.innerHTML = value;
+
+            updateLSData();
+        })
+
+
+
+        document.body.appendChild(note);
+    }
+
+    const notes = JSON.parse(localStorage.getItem('notes'));
+
+    if(notes){notes.forEach((note) =>addNewNote (note))};
+
+    addButton.addEventListener('click', () => addNewNote ());
+</script>
+</html>

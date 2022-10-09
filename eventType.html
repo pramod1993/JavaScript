@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Suman</title>
+    </head>
+    <style>
+        .button_su{
+            background:#3f51b5;
+            color: #fff;
+            padding: 10px 15px;
+            margin: 0px 10px auto;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <body>
+        <a href="#" class="button_su" onclick="alert('i am awesome, But no use me')">
+            <span class="button_text">Simpale Inline alert</span>
+            </a>
+
+        <a href="#" class="button_su" onclick="callingFunction()">
+        <span class="button_text">By calling a function</span>
+        </a>
+        <a href="#" class="button_su">
+            <span class="button_text" id="twoWay">Inline Event</span>
+            </a>
+            <a href="#" class="button_su">
+                <span class="button_text" id="Thiee">Event Listeners</span>
+                </a>
+
+        <script>
+            const callingFunction = () => {
+                alert('most common way of writing funtion');
+            }
+            // 2nd way of writing function
+            const twoWay = document.getElementById('twoWay');
+            twoWay.onclick = function() {
+                alert('most common way of writing funtions !');
+            }
+            // 3rd way of writing function
+
+            const Thiee = document.querySelector('#Thiee');
+            Thiee.addEventListener('click', () =>{
+                alert('i Love this  way of writing fungtion');
+            })
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search Banr</title>
+    </head>
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{
+            background: green;
+            color: #ffff;
+            border: none;
+            padding: 10px 20px;
+        }
+    </style>
+    <body>
+        <p class="para">Pramod</p>
+        <p class="para1">Pramod suman</p>
+        <p>Pramod & Suman</p>
+        <p>Pramod Suman</p>
+        <h1 id="hedin">Pramod Singh & Suman Singh</h1>
+
+
+        <button onclick="changeContent()"> Click Me</button>
+
+        <script>
+            const changeContent = () => {
+                document.getElementById('hedin').innerHTML = 'Welcome To Pramod Singh';
+                // console.log(document.querySelector('para', 'para1').innerHTML = 'hello suman');
+                document.querySelector('.para').innerHTML = 'hello suman';
+            }
+        </script>
+    </body>
+</html>
